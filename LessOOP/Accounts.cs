@@ -73,5 +73,35 @@ namespace LessOOP
         /// <param name="count"></param>
         /// <returns></returns>
         private static long Nnum(long count) => count +=1;
+
+        /// <summary>
+        /// Метод снятия со счета
+        /// </summary>
+        /// <param name="outsum"></param>
+        /// <returns></returns>
+        public Boolean OutAcc(decimal outsum) 
+        {            
+            if (outsum > BalansAccounts)
+            {
+                return false;
+            }
+            else
+            {
+                BalansAccounts = BalansAccounts - outsum;
+                return true;
+            }           
+        }
+
+        /// <summary>
+        /// Метод пополнения счета
+        /// </summary>
+        /// <param name="outsum"></param>
+        public void InAcc(decimal insum)
+        {
+            if (insum > 0)
+            {
+                BalansAccounts = BalansAccounts + insum;
+            }           
+        }
     }
 }
