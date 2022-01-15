@@ -17,12 +17,29 @@ namespace LessOOP
     }
     class Accounts
     {
-        
-        private int _NumberAccounts;
-        private decimal _BalansAccounts;
-        private typeacc _TypeAccounts;
+        private long _NumberAccounts;//номер счета
+        private decimal _BalansAccounts;//баланс счета
+        private typeacc _TypeAccounts;//тип счета
 
-        public int NumberAccounts { get { return _NumberAccounts; } set { _NumberAccounts = value; } }
+       static long numNew;
+
+        public long NumberAccounts
+        { 
+            get 
+            {
+                return _NumberAccounts; 
+               // return NumNew;
+            } 
+            set
+            { 
+                if (_NumberAccounts > 0)
+                {
+                    _NumberAccounts = value;
+                    //_NumberAccounts = NumNew;
+                }
+                
+            }
+        }
         public decimal BalansAccounts { get { return _BalansAccounts; } set { _BalansAccounts = value; } }
         public typeacc TypeAccounts
         {
@@ -38,11 +55,23 @@ namespace LessOOP
 
 
 
-        public Accounts(int NumberAccounts, decimal BalansAccounts, typeacc TypeAccounts)
+        public Accounts(long NumberAccounts, decimal BalansAccounts, typeacc TypeAccounts)
         {
+            numNew = Nnum(numNew);//генерим уникальный номер счета
+            NumberAccounts = numNew;
+
             _NumberAccounts = NumberAccounts;
             _BalansAccounts = BalansAccounts;
             _TypeAccounts = TypeAccounts;
+            
         }
+
+
+        /// <summary>
+        /// Генератор номера счета
+        /// </summary>
+        /// <param name="count"></param>
+        /// <returns></returns>
+        private static long Nnum(long count) => count +=1;
     }
 }
