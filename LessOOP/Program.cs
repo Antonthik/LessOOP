@@ -6,7 +6,9 @@ namespace LessOOP
     {
         static void Main(string[] args)
         {
-            //Console.WriteLine("Hello World!");
+            Accounts acc = new Accounts(1, 100, (typeacc) 1);
+
+            var t = acc.TypeAccounts;
         }
     }
 }
