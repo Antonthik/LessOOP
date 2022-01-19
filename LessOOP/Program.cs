@@ -6,12 +6,18 @@ namespace LessOOP
     {
         static void Main(string[] args)
         {
-            
+            Demo1();//Работа с объектом счет
+            Demo2();//Работа с инверцией текста
+
+        }
+
+        static void Demo1()
+        {
             Accounts[] Arr = new Accounts[4];//массив счетов
-           
+
 
             //Создаем четыре счета
-            Arr[0] = new Accounts(1, 100, (typeacc) 1);
+            Arr[0] = new Accounts(1, 100, (typeacc)1);
             Arr[1] = new Accounts(1, 50, (typeacc)2);
             Arr[2] = new Accounts(1, 400, (typeacc)1);
             Arr[3] = new Accounts(1, 70, (typeacc)1);
@@ -20,31 +26,18 @@ namespace LessOOP
             Accounts acc;//текущий счет
 
             Console.WriteLine($"Доступные счета");
-            foreach (Accounts accoun in Arr) 
+            foreach (Accounts accoun in Arr)
             {
                 Console.WriteLine($"Номер счета:{accoun.NumberAccounts}  На балансе сумма: {accoun.BalansAccounts} Тип счета:{accoun.TypeAccounts}");
             }
 
             Console.WriteLine($"Введите номер счета");
             var intextNum = Console.ReadLine();
-            long  num = Convert.ToInt64(intextNum);
-            //boolean flag = false;
-           
-            ////ищем выбранный счет
-            //foreach (accounts accnt in arr)
-            //{
-            //    if (num == accnt.numberaccounts) 
-            //    {
-            //        acc = accnt;
-            //        flag = true;
-            //    }  
-            //    if (flag == true) break;
-            //}
-            
-            //if (flag == true)
-            if (FindeAcc(num,Arr,out acc)==true)
+            long num = Convert.ToInt64(intextNum);
+
+            if (FindeAcc(num, Arr, out acc) == true)
             {
-               
+
                 //Пополнение текущего счета
                 Console.WriteLine($"На балансе сумма: {acc.BalansAccounts}");
                 Console.WriteLine($"Введите сумму для пополнения:");
@@ -75,7 +68,7 @@ namespace LessOOP
                 var intextNum0 = Console.ReadLine();
                 long numdonor = Convert.ToInt64(intextNum0);
                 Accounts accdonor = Arr[0];//счет донор
-                if (FindeAcc(numdonor, Arr,out accdonor) == true)
+                if (FindeAcc(numdonor, Arr, out accdonor) == true)
                 {
                     Console.WriteLine($"Введите сумму для снятия:");
                     intext = Console.ReadLine();
@@ -83,12 +76,12 @@ namespace LessOOP
                     decimal sumd = Convert.ToDecimal(intext);
                     Console.WriteLine($"На балансе счета донора: {accdonor.BalansAccounts}");
 
-                   if (acc.FromAccToAcc(accdonor, sumd) == true)
+                    if (acc.FromAccToAcc(accdonor, sumd) == true)
                     {
                         Console.WriteLine($"На балансе счета донора (после): {accdonor.BalansAccounts}");
                         Console.WriteLine($"На балансе текущуго счета(после): {acc.BalansAccounts}");
                     }
-                    else 
+                    else
                     {
                         Console.WriteLine($"Недостаточно средств для перевода со счета");
                     }
@@ -97,15 +90,14 @@ namespace LessOOP
 
 
             }
-            else 
+            else
             {
                 Console.WriteLine($"Счет не найден.");
-            }  
+            }
         }
-
-        static bool FindeAcc(long num,Accounts[] arr,out Accounts acc) 
+        static bool FindeAcc(long num, Accounts[] arr, out Accounts acc)
         {
-            bool flag=false;
+            bool flag = false;
             acc = arr[0];//текущий счет
             //Ищем выбранный счет
             foreach (Accounts accnt in arr)
@@ -120,6 +112,35 @@ namespace LessOOP
 
             return flag;
 
+        }
+        static void Demo2()
+        {
+            Console.WriteLine($"Введите текст, который надо написать наоборот");
+            string str = Console.ReadLine();
+            string strNew = TextInvert(str);
+            Console.WriteLine($"Было {str}");
+            Console.WriteLine($"Стало {strNew}");
+        }
+        /// <summary>
+        /// Текст в обратном направлении
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        static string TextInvert(string str)
+        {
+            //string str = "olleH";
+            string strNew = "";
+            char[] chr = new char[str.Length];//создаем массив символов
+            int j = 0;
+            for (int i = str.Length - 1; i >= 0; i--)//Используем обратное чтение массива
+            {
+                chr[j] = str[i];//заполняем массив символов
+                                // Console.WriteLine($"{str[i]}");
+                j++;
+            }
+
+            strNew = new string(chr);//собираем массив символов в строку
+            return strNew;
         }
     }
 }
