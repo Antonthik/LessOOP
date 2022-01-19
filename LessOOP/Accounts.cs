@@ -103,5 +103,25 @@ namespace LessOOP
                 BalansAccounts = BalansAccounts + insum;
             }           
         }
+
+        /// <summary>
+        /// Списание с счета донора на текущий счет
+        /// </summary>
+        /// <param name="donor"></param>
+        /// <param name="sum"></param>
+        public bool FromAccToAcc(Accounts donor,decimal sum) 
+        {
+            if (donor.BalansAccounts >= sum ) 
+            {
+                BalansAccounts = BalansAccounts + sum;
+                donor.BalansAccounts = donor.BalansAccounts - sum;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+                
+        }
     }
 }
