@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Collections.Generic;
 
 namespace LessOOP
 {
@@ -6,8 +8,9 @@ namespace LessOOP
     {
         static void Main(string[] args)
         {
-            Demo1();//Работа с объектом счет
-            Demo2();//Работа с инверцией текста
+           // Demo1();//Работа с объектом счет
+           // Demo2();//Работа с инверцией текста
+            Demo3();
 
         }
 
@@ -142,5 +145,54 @@ namespace LessOOP
             strNew = new string(chr);//собираем массив символов в строку
             return strNew;
         }
+
+        //Работа с файлом и текстовыми строками
+        static void Demo3()
+        {
+            string NameFile = "FIOEMAIL.txt";
+            string SourceFilePuth = NameFile;
+            GetFIOMAIL(SourceFilePuth, out var fio,out var email);
+
+            for (int i = 0; i < fio.Length; i++)
+            {
+                Console.WriteLine($"ФИО: {fio[i]} Почта: {email[i]}");
+            }
+        }
+
+        static void GetFIOMAIL(string SourceFilePuth, out string[] Fio, out string[] Email)
+        {
+            if (!File.Exists(SourceFilePuth)) throw new FileNotFoundException("", SourceFilePuth);
+
+            var list_fio = new List<string>();
+            var list_email = new List<string>();
+            using (var file = File.OpenText(SourceFilePuth))
+                while (!file.EndOfStream) 
+                {
+                    var line = file.ReadLine();
+                    if (line.Length == 0) continue;
+
+                    SearchMail(ref line, out var fio);
+
+                   // var arr = line.Split("&");
+                    list_fio.Add(line);
+                    list_email.Add(fio);
+                }
+
+            Fio = list_fio.ToArray();
+            Email = list_email.ToArray();
+        }
+        /// <summary>
+        /// Извлекаем почту и фио из строки
+        /// используем переменную по ссылке
+        /// </summary>
+        /// <param name="s"></param>
+        /// <param name="fio"></param>
+        static void SearchMail(ref string s, out string fio)
+        {
+            var arr = s.Split("&");
+            s= (arr[0]);
+           fio=(arr[1]);
+        }
+            
     }
 }
