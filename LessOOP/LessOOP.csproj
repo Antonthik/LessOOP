@@ -6,6 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BildingsLibrary\BildingsLibrary.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="FIOEMAIL.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

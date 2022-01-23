@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Collections.Generic;
+using BildingsLibrary;
 
 namespace LessOOP
 {
@@ -8,17 +9,15 @@ namespace LessOOP
     {
         static void Main(string[] args)
         {
-           // Demo1();//Работа с объектом счет
-           // Demo2();//Работа с инверцией текста
-            Demo3();
-
+            // Demo1();//Работа с объектом счет
+            // Demo2();//Работа с инверцией текста
+            // Demo3();//Чтение файла и применение переменные по ссылке
+               Demo4();//Чтение файла и применение переменные по ссылке
         }
 
         static void Demo1()
         {
             Accounts[] Arr = new Accounts[4];//массив счетов
-
-
             //Создаем четыре счета
             Arr[0] = new Accounts(1, 100, (typeacc)1);
             Arr[1] = new Accounts(1, 50, (typeacc)2);
@@ -115,6 +114,20 @@ namespace LessOOP
 
             return flag;
 
+        }
+
+        /// <summary>
+        /// Применение метода Bildings
+        /// </summary>
+        static void Demo4() 
+        {
+            var bild1 = new Bildings(10, 2, 6, 3);
+            //var bild2 = new Bildings(10, 2, 6, 1);
+            //var bild3 = new Bildings(10, 2, 6, 1);
+
+            var d = bild1.HighestFloor();
+            var f = bild1.CountApartmentsOnFloor();
+            var g = bild1.CountApartmentsInEntrances();
         }
         static void Demo2()
         {
