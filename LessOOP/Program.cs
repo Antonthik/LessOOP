@@ -2,6 +2,8 @@
 using System.IO;
 using System.Collections.Generic;
 using BildingsLibrary;
+using BildCreatorLibrary;
+using System.Collections;
 
 namespace LessOOP
 {
@@ -9,10 +11,12 @@ namespace LessOOP
     {
         static void Main(string[] args)
         {
+
+
             // Demo1();//Работа с объектом счет
             // Demo2();//Работа с инверцией текста
             // Demo3();//Чтение файла и применение переменные по ссылке
-               Demo4();//Чтение файла и применение переменные по ссылке
+            Demo4();//Чтение файла и применение переменные по ссылке
         }
 
         static void Demo1()
@@ -116,18 +120,24 @@ namespace LessOOP
 
         }
 
+        
+
         /// <summary>
         /// Применение метода Bildings
         /// </summary>
-        static void Demo4() 
+        static void Demo4()
         {
+            //Создаем объект из класса
             var bild1 = new Bildings(10, 2, 6, 3);
-            //var bild2 = new Bildings(10, 2, 6, 1);
-            //var bild3 = new Bildings(10, 2, 6, 1);
 
             var d = bild1.HighestFloor();
             var f = bild1.CountApartmentsOnFloor();
             var g = bild1.CountApartmentsInEntrances();
+
+            //Создаем объект из фабрики
+            var bild2 = Creator.CreateBild(4);//вариант с указанием высоты
+            //Создаем объект из фабрики
+            var bild3 = Creator.CreateBild(4);//вариант по умолчанию
         }
         static void Demo2()
         {

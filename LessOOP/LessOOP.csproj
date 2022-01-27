@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BildCreatorLibrary\BildCreatorLibrary.csproj" />
     <ProjectReference Include="..\BildingsLibrary\BildingsLibrary.csproj" />
   </ItemGroup>
 

@@ -20,7 +20,7 @@ namespace BildingsLibrary
 
         public Bildings(double Highest, long CountFloors, long CountApartments, long ContEntrances) 
         {
-             _count = Nnum(_count);
+            _count = Nnum(_count);
             _NumbBild = _count;
             _Highest = Highest;
             _CountFloors = CountFloors;
