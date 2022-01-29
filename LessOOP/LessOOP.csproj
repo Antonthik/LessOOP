@@ -8,6 +8,7 @@
   <ItemGroup>
     <ProjectReference Include="..\BildCreatorLibrary\BildCreatorLibrary.csproj" />
     <ProjectReference Include="..\BildingsLibrary\BildingsLibrary.csproj" />
+    <ProjectReference Include="..\NumbersLibrary\NumbersLibrary.csproj" />
   </ItemGroup>
 
   <ItemGroup>

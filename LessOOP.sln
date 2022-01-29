@@ -5,9 +5,11 @@ VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LessOOP", "LessOOP\LessOOP.csproj", "{55585D7B-E614-4628-A222-1CECC03A69C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BildingsLibrary", "BildingsLibrary\BildingsLibrary.csproj", "{62B074B6-137E-4ECD-9A2B-60981AC20839}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BildingsLibrary", "BildingsLibrary\BildingsLibrary.csproj", "{62B074B6-137E-4ECD-9A2B-60981AC20839}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BildCreatorLibrary", "BildCreatorLibrary\BildCreatorLibrary.csproj", "{03D26C5E-803D-4B22-9C6F-E16924459540}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BildCreatorLibrary", "BildCreatorLibrary\BildCreatorLibrary.csproj", "{03D26C5E-803D-4B22-9C6F-E16924459540}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumbersLibrary", "NumbersLibrary\NumbersLibrary.csproj", "{70D4EC2C-7C4F-410F-AB04-ABA2659C682F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{03D26C5E-803D-4B22-9C6F-E16924459540}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03D26C5E-803D-4B22-9C6F-E16924459540}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03D26C5E-803D-4B22-9C6F-E16924459540}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70D4EC2C-7C4F-410F-AB04-ABA2659C682F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70D4EC2C-7C4F-410F-AB04-ABA2659C682F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70D4EC2C-7C4F-410F-AB04-ABA2659C682F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70D4EC2C-7C4F-410F-AB04-ABA2659C682F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

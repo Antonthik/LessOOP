@@ -3,6 +3,7 @@ using System.IO;
 using System.Collections.Generic;
 using BildingsLibrary;
 using BildCreatorLibrary;
+using NumbersLibrary;
 using System.Collections;
 
 namespace LessOOP
@@ -16,7 +17,27 @@ namespace LessOOP
             // Demo1();//Работа с объектом счет
             // Demo2();//Работа с инверцией текста
             // Demo3();//Чтение файла и применение переменные по ссылке
-            Demo4();//Чтение файла и применение переменные по ссылке
+            // Demo4();//Чтение файла и применение переменные по ссылке
+               Demo5();//работа с объектом рациональных чисел
+        }
+
+
+        static void Demo5()
+        {
+            var rn1 = new RationalNumber(1,5);
+            var rn2 = new RationalNumber(2, 5);
+
+            var rn3 = rn1 + rn2;
+            var rn4 = rn1 - rn2;
+            var rn5 = rn1 * rn2;
+            var rn6 = rn1 / rn2;
+            var b = rn1 == rn2;
+            var b1 = rn1 != rn2;
+            var b2 = rn1 > rn2;
+            var b3 = rn1 < rn2;
+
+            var rn7 = (RationalNumber)"7/8";
+
         }
 
         static void Demo1()
