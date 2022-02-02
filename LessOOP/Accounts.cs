@@ -123,5 +123,46 @@ namespace LessOOP
             }
                 
         }
+
+        public static bool operator ==(Accounts left, Accounts right)
+        {
+            return left.Equals(right);
+        }
+
+        public static bool operator !=(Accounts left, Accounts right)
+        {
+            return !(left == right);
+        }
+        /// <summary>
+        /// Переопределили метод Equals
+        /// override - переопределяет Equals в базовом классе
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public override bool Equals(object obj)
+        {
+            if (obj is null) return false;            
+
+            var other_acc = (Accounts)obj;
+
+            if (other_acc.TypeAccounts!=TypeAccounts) return false;
+
+            return other_acc.NumberAccounts == NumberAccounts;
+        } 
+
+        /// <summary>
+        /// Переопределяем метод генерации хэш-кода объекта
+        /// </summary>
+        /// <returns></returns>
+        public override int GetHashCode() 
+        {
+            return HashCode.Combine(NumberAccounts, BalansAccounts,TypeAccounts);
+        }
+
+        public override string ToString()
+        {
+            //return base.ToString();
+            return ($"Номер счета:{NumberAccounts} Баланс счета:{BalansAccounts} Тип счета:{TypeAccounts}");
+        }
     }
 }

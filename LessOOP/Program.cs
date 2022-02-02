@@ -18,11 +18,23 @@ namespace LessOOP
             // Demo2();//Работа с инверцией текста
             // Demo3();//Чтение файла и применение переменные по ссылке
             // Demo4();//Чтение файла и применение переменные по ссылке
-               Demo5();//работа с объектом рациональных чисел
+            // Demo5();//работа с объектом рациональных чисел
+            Demo6();//работа в объекте счет с операторами сравнения
         }
 
+        static void Demo6()
+        {
+            var acc1 = new Accounts(1, 100, (typeacc)1);
+            var acc3 = new Accounts(1, 100, (typeacc)2);
+            var acc2= acc1;
 
-        static void Demo5()
+            var h = acc1.Equals(acc2);
+            var h1 = Equals(acc1,acc2);
+            var h2 = Equals(acc1, acc3);
+
+        }
+
+            static void Demo5()
         {
             var rn1 = new RationalNumber(1,5);
             var rn2 = new RationalNumber(2, 5);
