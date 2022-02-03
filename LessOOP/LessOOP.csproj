@@ -5,4 +5,17 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BildCreatorLibrary\BildCreatorLibrary.csproj" />
+    <ProjectReference Include="..\BildingsLibrary\BildingsLibrary.csproj" />
+    <ProjectReference Include="..\FigureLibrary\FigureLibrary.csproj" />
+    <ProjectReference Include="..\NumbersLibrary\NumbersLibrary.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="FIOEMAIL.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
