@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using BildingsLibrary;
 using BildCreatorLibrary;
 using NumbersLibrary;
+using FigureLibrary;
 using System.Collections;
 
 namespace LessOOP
@@ -19,7 +20,20 @@ namespace LessOOP
             // Demo3();//Чтение файла и применение переменные по ссылке
             // Demo4();//Чтение файла и применение переменные по ссылке
             // Demo5();//работа с объектом рациональных чисел
-            Demo6();//работа в объекте счет с операторами сравнения
+            // Demo6();//работа в объекте счет с операторами сравнения
+               Demo7();//фигуры
+        }
+
+        static void Demo7()
+        {
+            var c = new Circle(0,0,10);//создаем объект круг
+                c.MoveHorisontal(5);//движение по горизонтали
+                c.MoveVertical(7);//движение по вертикали
+            var d=c.Square();//площадь
+                 c.Print();//вывод на консоль параметров объекта
+
+            var rec = new Rectangle(0, 0, 15, 10);
+            rec.Print();//вывод на консоль параметров объекта
         }
 
         static void Demo6()
