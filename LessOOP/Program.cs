@@ -5,6 +5,7 @@ using BildingsLibrary;
 using BildCreatorLibrary;
 using NumbersLibrary;
 using FigureLibrary;
+using CoderLibrary;
 using System.Collections;
 
 namespace LessOOP
@@ -21,9 +22,33 @@ namespace LessOOP
             // Demo4();//Чтение файла и применение переменные по ссылке
             // Demo5();//работа с объектом рациональных чисел
             // Demo6();//работа в объекте счет с операторами сравнения
-               Demo7();//фигуры
+            // Demo7();//фигуры
+            Demo8();
         }
 
+        static void Demo8()
+        {
+            Console.WriteLine($"Введите текст для шифрования:");
+            string input = Console.ReadLine();
+            //"Друзья,Привет всем"
+            var ob = new ACoder();
+            ob.TextForCode = input;
+            var TextForCode = ob.Encode();
+            Console.WriteLine($"Зашифрованный текст вариантом А: {TextForCode}");
+            ob.TextForDeCode = TextForCode;
+            var TextForDeCode = ob.Decode();
+            Console.WriteLine($"Дешифрованный текст вариантом А: {TextForDeCode}");
+
+            var ob1 = new BCoder();
+            ob1.TextForCode = "Друзья,Привет всем";
+            var TextForCode1 = ob1.Encode();
+            Console.WriteLine($"Зашифрованный текст вариантом B: {TextForCode1}");
+            ob1.TextForDeCode = TextForCode1;
+            var TextForDeCode1 = ob1.Decode();
+            Console.WriteLine($"Дешифрованный текст вариантом B: {TextForDeCode1}");
+
+
+        }
         static void Demo7()
         {
             var c = new Circle(0,0,10);//создаем объект круг
